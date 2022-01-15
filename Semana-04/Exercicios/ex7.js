@@ -5,7 +5,7 @@ const fruits = [
   { name: "feijão", price: 10 },
   { name: "cebola", price: 6.3 },
 ]
-
+// reduce
 const total = fruits.reduce((acc, { price }) => {
   return acc + price
 }, 0)
