@@ -129,21 +129,21 @@ const empId = (employees, id) => {
   const result = checkId ? checkId : "Não existe funcionário com esse id"
   console.log(result)
 }
-empId(employees, 9)
+// empId(employees, 9)
 
 // B
 const empActive = (employees) => {
   const checkActiv = employees.filter((employee) => employee.active)
   console.log(checkActiv)
 }
-empActive(employees)
+// empActive(employees)
 
 // C
 const empClt = (employees) => {
   const checkClt = employees.filter((employee) => employee.type === "clt")
   console.log(checkClt)
 }
-empClt(employees)
+// empClt(employees)
 
 // D
 const baseSal = (employees) => {
@@ -162,7 +162,7 @@ const baseSal = (employees) => {
   })
   console.log(base)
 }
-baseSal(employees)
+// baseSal(employees)
 
 // E
 
@@ -172,4 +172,14 @@ const partType = (employees) => {
   console.log(pj)
   console.log(clt)
 }
-partType(employees)
+// partType(employees)
+
+// F
+
+const employeeActive = (employees) => {
+  let active = employees
+    .filter((employee) => employee.active)
+    .sort((a, b) => a.age - b.age)
+  console.log(active)
+}
+employeeActive(employees)

@@ -15,7 +15,7 @@
 // Tendo por base as funcionalidades acima e como entrada um um array de
 // objetos, faça um programa que resolva o problema do dono da livraria.
 // Exemplo de Entrada
-const clients = [
+const bookStore = [
   {
     cod: "8568014003",
     nome: "mais esperto que o diabo",
@@ -94,3 +94,87 @@ const clients = [
     quantidadeVendido: 797,
   },
 ]
+
+// Author name
+const SortBestSellAuth = (bookStore) => {
+  const bestSell = bookStore.sort((a, b) => {
+    return b.quantidadeVendido - a.quantidadeVendido
+  })
+  console.log(bestSell[0].autor)
+}
+SortBestSellAuth(bookStore)
+
+// Price below and above
+const sortPriceBelow = (bookStore, price, type) => {
+  if (type.toLowerCase() === "below".toLowerCase()) {
+    let filterPrice = bookStore.filter(({ valor }) => valor < price)
+    console.log(filterPrice)
+  } else if (type.toLowerCase() === "above".toLowerCase()) {
+    let filterPrice = bookStore.filter(({ valor }) => valor > price)
+    console.log(filterPrice)
+  } else {
+    console.log(`Tipo nao existente`)
+  }
+}
+sortPriceBelow(bookStore, 41.9, "above")
+
+// Search name book
+const searchNameBook = (bookStore, name) => {
+  const search = bookStore.filter(
+    ({ nome }) => nome.toLowerCase().trim() === name.toLowerCase().trim()
+  )
+  console.log(`Pesquisa por nome:`)
+  console.log(search)
+}
+searchNameBook(bookStore, "mais esperto que o diabo")
+
+// Search author book
+const searchAuthorBook = (bookStore, author) => {
+  const search = bookStore.filter(
+    ({ autor }) => autor.toLowerCase().trim() === author.toLowerCase().trim()
+  )
+  console.log(`Pesquisa por autor:`)
+  console.log(search)
+}
+searchAuthorBook(bookStore, "nassim nicholas taleb")
+
+// Search code book
+const searchCodeBook = (bookStore, code) => {
+  const search = bookStore.filter(({ cod }) => cod === code)
+  console.log(`Pesquisa por código:`)
+  console.log(search)
+}
+searchCodeBook(bookStore, "8547001085")
+
+// List of books
+const listOfBooks = (bookStore) => {
+  console.log(`Lista de Estoque:`)
+  console.log(bookStore)
+}
+listOfBooks(bookStore)
+
+// Top X books
+const topXBooks = (bookStore, x) => {
+  const top = bookStore.sort((a, b) => {
+    return b.quantidadeVendido - a.quantidadeVendido
+  })
+  console.log(`Top ${x} livros mais vendidos:`)
+  console.log(top.slice(0, x))
+}
+topXBooks(bookStore, 3)
+
+// Increase price
+const increasePrice = (bookStore, x) => {
+  const increase = bookStore.map((book) => {
+    return {
+      cod: book.cod,
+      nome: book.nome,
+      autor: book.autor,
+      valor: book.valor + book.valor * (x / 100),
+      quantidadeVendido: book.quantidadeVendido,
+    }
+  })
+  console.log(`Aumento de ${x}% no preço dos livros:`)
+  console.log(increase)
+}
+increasePrice(bookStore, 1)
