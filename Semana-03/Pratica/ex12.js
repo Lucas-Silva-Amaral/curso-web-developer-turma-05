@@ -157,16 +157,36 @@ const searchBookCod = (array, cod) => {
     }
   }
 }
-searchBookCod(array, "8547001085")
+// searchBookCod(array, "8547001085")
 
-const seAutSell = (array) => {
-  let author = ""
+const stockBooks = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    console.log(`Nome do Livro: ${array[i].nome.toUpperCase()}`)
+    console.log(`Valor R$: ${array[i].valor}`)
+    console.log(`Quantidade Vendida: ${array[i].quantidadeVendido}`)
+  }
+}
+// stockBooks(array)
+
+// top x livros mais vendidos
+const topBooks = (array, x) => {
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array.length; j++) {
       if (array[i].quantidadeVendido > array[j].quantidadeVendido) {
-        author = array[i].autor
-        return `Livro mais vendido: ${author}`
+        console.log(`Nome do Livro: ${array[i].nome.toUpperCase()}`)
       }
     }
   }
 }
+
+// topBooks(array, 3)
+
+// aumento de preço de x%
+const aumentoPreco = (array, x) => {
+  for (let i = 0; i < array.length; i++) {
+    array[i].valor = array[i].valor * (1 + x / 100)
+    console.log(`Nome do Livro: ${array[i].nome.toUpperCase()}`)
+    console.log(`Valor R$: ${array[i].valor.toFixed(2)}`)
+  }
+}
+aumentoPreco(array, 10)
