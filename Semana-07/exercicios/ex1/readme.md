@@ -1,0 +1,2 @@
+1. Crie um botão utilizando a tag button e coloque uma cor vermelha de fundo. Ao passar o mouse em cima do botão a cor do fundo deverá mudar para azul.
+2. Crie uma lista de elementos utilizando as tags ul e li com 10 elementos e mude a cor de fundo apenas dos elementos pares, ou seja, apenas as li’s pares. (Coloque o número do item dentro das tags li. Ex.: <li>1</li>). Utilize nth-child para fazer essa tarefa.

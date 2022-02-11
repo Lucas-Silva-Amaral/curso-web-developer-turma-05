@@ -1,0 +1,14 @@
+.tittle {
+  text-align: center;
+  font-size: 100px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  text-align: end;
+}

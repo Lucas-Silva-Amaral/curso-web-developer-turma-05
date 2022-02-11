@@ -1,0 +1,29 @@
+html,
+body {
+  border: none;
+}
+
+.btn {
+  background-color: red;
+  border: none;
+  padding: 20px;
+  color: white;
+}
+
+.btn:hover {
+  background-color: blue;
+}
+
+/*pegar so os li pares*/
+.list {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+/* Ou da para fazer com 2n no lugar do EVEN*/
+li:nth-child(even) {
+  background-color: red;
+}
+
+li:nth-child(odd):hover {
+  background-color: blue;
+}
