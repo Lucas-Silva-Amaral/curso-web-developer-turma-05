@@ -1,0 +1,10 @@
+header {
+  border: solid 1px salmon;
+  background-color: black;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  color: aquamarine;
+}
